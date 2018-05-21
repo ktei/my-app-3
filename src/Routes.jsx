@@ -5,6 +5,12 @@ import { CourseListView, CourseDetailsView } from './Course';
 import { LecturerListView, LecturerDetailsView } from './Lecturer';
 import { StudentListView, StudentDetailsView } from './Student';
 
+const NotFound = () => {
+  return (
+    <h1>404</h1>
+  );
+};
+
 export default () => ((
   <Switch>
     <Route exact path="/" component={CourseListView} />
@@ -14,5 +20,6 @@ export default () => ((
     <Route exact path="/students/:id" component={StudentDetailsView} />
     <Route exact path="/lecturers" component={LecturerListView} />
     <Route exact path="/lecturers/:id" component={LecturerDetailsView} />
+    <Route path="*" exact component={NotFound} />
   </Switch>
 ));
